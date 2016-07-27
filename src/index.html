@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= t.include("partials/_head.html") %>
+    <%= t.include("partials/_analytics_hearst.html") %>
+  </head>
+  <script>  var HDN = HDN || {}  </script>
+
+  <body>
+
+    <responsive-child>
+
+      <div class="hed">A partial timeline of major moments in women's sports</div>
+      <div class="chatter lesspadding">A look at milestones in the history of women's sports</div>
+
+      <div id="stick-here"></div>
+      <div id="timeline-placeholder"></div>
+      <div id="ticker"></div>
+
+      <div id="timeline">
+        <div class="event" id="wbball"></div>
+        <div class="event" id="titleix"></div>
+        <div class="event" id="wsf"></div>
+        <div class="event" id="soccer"></div>
+        <div class="event" id="marathon"></div>
+        <div class="event" id="worldcup"></div>
+        <div class="event" id="olychanges"></div>
+        <div class="event" id="usabball"></div>
+        <div class="event" id="newoly"></div>
+        <div class="event" id="summer"></div>
+        <div class="event" id="bball"></div>
+        <div class="event" id="wwc"></div>
+        <div class="event" id="wusa"></div>
+        <div class="event" id="movement"></div>
+        <div class="event" id="ratings"></div>
+
+        <div class="credit">Benjamin Din &bull; <a href="mailto:benjamin.din@gmail.com">bdin@sfchronicle.com</a> &bull; <a href="http://twitter.com/benjamindin" target="_blank">@benjamindin</a> </div>
+      </div>
+
+    </responsive-child>
+
+    <script>
+      var timelineData = <%= JSON.stringify(csv.timeline_data) %>;
+    </script>
+    <script src="app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
