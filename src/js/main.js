@@ -13,16 +13,25 @@ for (var i = 0; i < timelineData.length; i++) {
 
 for (var i = 0; i < timelineData.length; i++) {
 	var a = document.getElementById(events[i]);
-	a.insertAdjacentHTML("beforeend","<div class='eventtext'><span class='date'>" + timelineData[i].date + "</span> <span class='text'>" + timelineData[i].event + "</span> <br>" + timelineData[i].words + "</div>");
+  var x = i - 1;
 
-	if (timelineData[i].image != '') {
+  if ((x == -1) || (timelineData[i].date != timelineData[x].date)) {
+  	a.insertAdjacentHTML("beforeend","<div class='eventtext'><span class='date'>" + timelineData[i].date + "</span> <span class='text'>" + timelineData[i].event + "</span> <br>" + timelineData[i].words + "</div>");
+  }
+  else {
+    a.insertAdjacentHTML("beforeend","<div class='eventtext'><span class='text'>" + timelineData[i].event + "</span> <br>" + timelineData[i].words + "</div>");
+    a.style.borderTop = "0";
+    a.style.marginTop = "-40px";
+  }	
+
+  if (timelineData[i].image != '') {
 		a.insertAdjacentHTML("beforeend","<img src='" + timelineData[i].image + "'><br><div class='caption'>" + timelineData[i].caption + " <span class='attr'> " + timelineData[i].credit + "</span></div>");
 	}
 	else if (timelineData[i].date == '1972') {
-		a.insertAdjacentHTML("beforeend",'<div style="width: 100%; margin: 20px 0; padding: 70px 25px 25px 50px; background-color: #6c85a5; color: white; font-family: FarnhamText; text-align: right; position: relative"><div style="position: absolute; font-size: 150px; top: 60px; left: 2%; color: rgba(255,255,255,0.3)">“</div><span style="font-size: 20px">“No person in the United States shall, on the basis of sex, be excluded from participation in, be denied the benefits of, or be subjected to discrimination under any education program or activity receiving federal financial assistance.”</span><br><br><span style="font-family: Antennaextralight; font-style: italic">— Title IX of the Educational Amendments of 1972</span></div>');
+		a.insertAdjacentHTML("beforeend",'<div id="quote"><div style="position: absolute; font-size: 150px; top: 60px; left: 2%; color: slategray">“</div><span style="font-size: 20px">“No person in the United States shall, on the basis of sex, be excluded from participation in, be denied the benefits of, or be subjected to discrimination under any education program or activity receiving federal financial assistance.”</span><br><br><span style="font-family: Antennaextralight; font-style: italic">— Title IX of the Education Amendments of 1972</span></div>');
 	}
 	else {
-		a.style.paddingBottom = "20px";
+		a.style.paddingBottom = "40px";
 	}
 }
 
@@ -86,7 +95,7 @@ x.domain(d3.extent(timelineData, function(d) {
 var xAxis = d3.axisTop()
   .scale(x)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1896","1972","1974","1977","1984","1991","1991","1995","1996","1996","1996","1999","2000","2012","2015"]
+  .tickValues(["1896","1972","1974","1984","1991","1991","1995","1996","1996","1996","1999","2000","2012","2015"]
   )
   .tickSize(0)
   .tickPadding(15);
@@ -106,7 +115,7 @@ ticks.each(function() {
     .append("circle")
       .attr("r", 5)
       .attr("fill","white")
-      .style("stroke","rgb(178, 178, 178)")
+      .style("stroke","slategray")
       .style("stroke-width","1px");
   d3.selectAll("circle")
     .attr("id", function(d,i) {return "t-" + i})
@@ -138,14 +147,14 @@ function activate() {
     var ed_top = a.getBoundingClientRect().top + window_top - 62;
 	var ede_top = a.getBoundingClientRect().bottom + window_top - 62;
 
-	var r = document.getElementById('t-6');
-    var u = document.getElementById('t-10');
-    var v = document.getElementById('t-9');
-    var w = document.getElementById('t-8');
+	var r = document.getElementById('t-5');
+    var u = document.getElementById('t-9');
+    var v = document.getElementById('t-8');
+    var w = document.getElementById('t-7');
 
     if (window_top > ed_top && window_top < ede_top) {
     	if (timelineData[i].date == 1991) {
-    		if (i == 5) {
+    		if (i == 4) {
     			r.style.fillOpacity = 0;
     			r.style.strokeOpacity = 0;
     		}
@@ -157,7 +166,7 @@ function activate() {
 	        ay.classList.add('active');
     	}
     	else if (timelineData[i].date == 1996) {
-    		if (i == 8) {
+    		if (i == 7) {
     			u.style.fillOpacity = 0;
     			u.style.strokeOpacity = 0;
     			v.style.fillOpacity = 0;
@@ -165,7 +174,7 @@ function activate() {
     			w.style.fillOpacity = 1;
     			w.style.strokeOpacity = 1;
     		}
-    		else if (i == 9) {
+    		else if (i == 8) {
     			u.style.fillOpacity = 0;
     			u.style.strokeOpacity = 0;
     			v.style.fillOpacity = 1;
@@ -173,7 +182,7 @@ function activate() {
     			w.style.fillOpacity = 0;
     			w.style.strokeOpacity = 0;
     		}
-    		else if (i == 10) {
+    		else if (i == 9) {
     			u.style.fillOpacity = 1;
     			u.style.strokeOpacity = 1;
     			v.style.fillOpacity = 0;
@@ -195,11 +204,11 @@ function activate() {
 	}
 
     // removes years if there is an overlap
-    if (document.getElementById(years[13]).classList.contains('active') ) {
-      document.getElementById(years[14]).style.display = "none";
+    if (document.getElementById(years[12]).classList.contains('active') ) {
+      document.getElementById(years[13]).style.display = "none";
     }
     else {
-      document.getElementById(years[14]).style.display = "";
+      document.getElementById(years[13]).style.display = "";
     }
 
   }
