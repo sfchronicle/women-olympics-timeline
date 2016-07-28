@@ -93,9 +93,7 @@ li {
   font-family: @block-graphics;
   font-weight: bold;
   max-width: 550px;
-  @media @mobile {
-    padding: 0 10px;
-  }
+  padding: 20px 0;
 }
 .chart-hed {
   font-size: 28px;
@@ -327,10 +325,6 @@ li {
   }
 }
 
-#wbball {
-  border-top: 0;
-}
-
 #ratings {
   border-bottom: 0.5px solid lightgray;
 }
@@ -404,11 +398,12 @@ path.domain {
 
 .sticky {
   position: fixed;
-  top: 0; 
+  top: 0 !important; 
   z-index: 100;
   width: 100%;
   left: 0;
   right: 0;
+  border-top: 0 !important;
 }
 
 .tick .active {

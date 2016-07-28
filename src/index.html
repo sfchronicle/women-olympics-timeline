@@ -15,13 +15,13 @@
   <body is="responsive-body">
 
     <responsive-child>
-
-      <div class="hed">A partial timeline of major moments in women's sports</div>
-      <div class="chatter lesspadding">A look at milestones in the history of women's sports</div>
+      <div style="height: 20px"></div>
 
       <div id="stick-here"></div>
       <div id="timeline-placeholder"></div>
       <div id="ticker"></div>
+
+      <div class="hed">A partial timeline of major moments in women's sports</div>
 
       <div id="timeline">
         <div class="event" id="wbball"></div>
@@ -48,6 +48,7 @@
       var timelineData = <%= JSON.stringify(csv.timeline_data) %>;
     </script>
     <script src="app.js" async></script>
+    <script src=""></script>
     <%= t.include("partials/_helloSFC.html") %>
 
   </body>

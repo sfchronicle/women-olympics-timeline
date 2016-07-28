@@ -144,8 +144,8 @@ function activate() {
   	var at = document.getElementById(t[i]);
   	var ay = document.getElementById(years[i]);
 
-    var ed_top = a.getBoundingClientRect().top + window_top - 62;
-	var ede_top = a.getBoundingClientRect().bottom + window_top - 62;
+  var ed_top = a.getBoundingClientRect().top + window_top - 61;
+	var ede_top = a.getBoundingClientRect().bottom + window_top - 61;
 
 	var r = document.getElementById('t-5');
     var u = document.getElementById('t-9');
