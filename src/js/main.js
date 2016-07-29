@@ -28,7 +28,7 @@ for (var i = 0; i < timelineData.length; i++) {
 		a.insertAdjacentHTML("beforeend","<img src='" + timelineData[i].image + "'><br><div class='caption'>" + timelineData[i].caption + " <span class='attr'> " + timelineData[i].credit + "</span></div>");
 	}
 	else if (timelineData[i].date == '1972') {
-		a.insertAdjacentHTML("beforeend",'<div id="quote"><div style="position: absolute; font-size: 150px; top: 60px; left: 2%; color: slategray">“</div><span style="font-size: 20px">“No person in the United States shall, on the basis of sex, be excluded from participation in, be denied the benefits of, or be subjected to discrimination under any education program or activity receiving federal financial assistance.”</span><br><br><span style="font-family: Antennaextralight; font-style: italic">— Title IX of the Education Amendments of 1972</span></div>');
+		a.insertAdjacentHTML("beforeend",'<div id="quote"><div style="position: absolute; font-size: 150px; top: 60px; left: 2%; color: slategray">“</div><span style="font-size: 20px">No person in the United States shall, on the basis of sex, be excluded from participation in, be denied the benefits of, or be subjected to discrimination under any education program or activity receiving federal financial assistance.”</span><br><br><span style="font-family: Antennaextralight; font-style: italic">— Title IX of the Education Amendments of 1972</span></div>');
 	}
 	else {
 		a.style.paddingBottom = "40px";
