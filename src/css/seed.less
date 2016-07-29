@@ -496,11 +496,23 @@ path.domain {
 }
 .logo-link {
   cursor: pointer;
+  padding-top: 8px;
   margin: 0 0 0 10px;
   img {
     opacity: 1;
     height: 20px;
   }
+
+  @media @mobile {
+    padding-left:0;
+    padding-right:0;
+
+    img {
+    height:16px;
+    }
+  }
+
+
 }
 
 .link, .logo-link {
