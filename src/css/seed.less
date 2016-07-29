@@ -93,7 +93,7 @@ li {
   font-family: @block-graphics;
   font-weight: bold;
   max-width: 550px;
-  padding: 20px 0;
+  padding: 20px;
 }
 .chart-hed {
   font-size: 28px;
@@ -140,6 +140,7 @@ li {
   color: @dark-gray;
   font-style: italic;
   font-family: @block-graphics;
+  border-top: 0.5px solid lightgray;
   @media @tablet {
     padding: 10px 20px;
   }
@@ -325,10 +326,6 @@ li {
   }
 }
 
-#ratings {
-  border-bottom: 0.5px solid lightgray;
-}
-
 #timeline-placeholder {
   height: 62px;
   background-color: white;
@@ -415,6 +412,38 @@ path.domain {
   width: 100%; margin: 20px 0 30px 0; padding: 70px 25px 25px 50px; background-color: white; color: slategray; font-family: FarnhamText; text-align: right; position: relative; border: 2px solid slategray;
 }
 
+#ratings>.caption {
+  margin-bottom: 20px;
+}
+
+.next {
+  width: 100%;
+  margin-bottom: 30px;
+
+  a {
+    color: slategray;
+  }
+}
+
+.next:hover {
+  background: slategray;
+
+  a {
+    color: white;
+  }
+}
+
+#return {
+  text-align: center;
+  color: slategray;
+  font-family: AntennaRegular;
+  padding: 5px;
+  border: 2px solid slategray;
+}
+
+#return:hover {
+  color: white;
+}
 // header -------------------------------------------
 // sticky navigation bar -------------------------------
 
